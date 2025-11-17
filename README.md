@@ -169,4 +169,4 @@ All exceptions implement PSR-11 interfaces where appropriate.
 
 ## **License**
 
-MIT license or whichever license you choose (update this section if needed).
+MIT license
