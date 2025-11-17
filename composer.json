@@ -1,6 +1,7 @@
 {
     "name": "taujor/cally",
     "description": "Cally is a lightweight, immutable registry for storing and retrieving data or services in PHP. It provides a simple yet powerful way to manage configurations, dependencies, or any key-value pairs with support for immutability and PSR-11 compliance. Cally is ideal for any project where a full-fledged dependency injection container is unnecessary.",
+    "keywords": ["container", "registry", "immutable", "psr-11", "di", "php", "dependency injection"],
     "type": "library",
     "require": {
         "php": "^8.1",
@@ -17,5 +18,10 @@
             "name": "taujor",
             "email": "tauscherjordan933@gmail.com"
         }
-    ]
+    ],
+    "support": {
+        "issues": "https://github.com/taujor/cally/issues",
+        "source": "https://github.com/taujor/cally"
+    },
+    "homepage": "https://github.com/taujor/cally"
 }
