@@ -1,4 +1,4 @@
-# **Cally — A Lightweight PSR-11 Dependency Injection Container**
+# **Cally — A Lightweight PSR-11 Service Locator**
 
 Cally is a minimal, elegant, and strict PSR-11–compatible dependency injection container for PHP 8.  
 It provides a simple API for defining services, factories, singletons, lazy-loaded objects, and immutable values.
@@ -25,6 +25,28 @@ Cally is designed to be:
   - `FrozenRegistryException`
   - `KeyAlreadyExistsException`
   - `KeyNotFoundException`
+
+## **Missing Essentials**
+
+- **No circular dependency detection** - Lazy services could create infinite loops if A depends on B depends on A
+- **No error context** - Exceptions don't capture which dependency failed during complex resolution chains
+- **No type safety** - Can't specify/validate what type a key should return
+- **No autowiring** - Must manually register everything (fine for simple apps, tedious for large ones)
+- **No container awareness** - Factories can't receive the container itself to resolve their own dependencies
+- **No unfreeze/clear** - Once frozen, you're stuck (problematic for testing)
+
+## **Debatable Missing Features**
+
+- **Aliases** - Point multiple keys to same service
+- **Tags/groups** - Retrieve all services of a certain type
+- **Service decoration/extension** - Wrap existing services
+- **Performance** - No caching of resolution paths for complex dependency graphs
+
+## **Production Readiness**
+For a small-to-medium application with straightforward dependencies, it's probably fine. For production at scale, you'd likely want at least circular dependency detection and better error context. The rest depends on your specific needs.
+
+## Future
+I plan to implement all missing features (and possibly some debatable ones) in future, while also staying commited to Cally's minimalistic nature.  
 
 ---
 
@@ -160,10 +182,8 @@ All exceptions implement PSR-11 interfaces where appropriate.
 ## **Why Cally?**
 
 - No unnecessary abstraction layers  
-- Perfect for personal and commercial web applications
 - A clean alternative to overly complex DI containers  
 - Explicit over magic  
-- Predictable and testable  
 
 ---
 
