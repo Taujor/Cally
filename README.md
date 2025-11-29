@@ -1,6 +1,6 @@
 # **Cally — A Lightweight PSR-11 Service Locator**
 
-Cally is a minimal, elegant, and strict PSR-11–compatible dependency injection container for PHP 8.  
+Cally is a minimal, elegant, and strict PSR-11–compatible service locator for PHP 8+.  
 It provides a simple API for defining services, factories, singletons, lazy-loaded objects, and immutable values.
 
 Cally is designed to be:
